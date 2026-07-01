@@ -107,18 +107,18 @@ export default function ApiKeyManager({ show, onClose, onSave, initialKey, initi
                 <div 
                   key={m.id}
                   onClick={() => setModelInput(m.id)}
-                  className={\`cursor-pointer border rounded-xl p-3 text-left transition relative overflow-hidden \${
+                  className={`cursor-pointer border rounded-xl p-3 text-left transition relative overflow-hidden ${
                     modelInput === m.id 
                       ? "border-indigo-500 bg-indigo-50 shadow-sm" 
                       : "border-slate-200 bg-white hover:border-indigo-300"
-                  }\`}
+                  }`}
                 >
                   {modelInput === m.id && (
                     <div className="absolute top-0 right-0 w-8 h-8 bg-indigo-500 rounded-bl-full flex items-start justify-end p-1.5">
                       <div className="w-1.5 h-1.5 bg-white rounded-full mt-0.5 mr-0.5" />
                     </div>
                   )}
-                  <h4 className={\`text-xs font-bold mb-1 \${modelInput === m.id ? "text-indigo-700" : "text-slate-700"}\`}>{m.name}</h4>
+                  <h4 className={`text-xs font-bold mb-1 ${modelInput === m.id ? "text-indigo-700" : "text-slate-700"}`}>{m.name}</h4>
                   <p className="text-[10px] text-slate-500 leading-tight">{m.desc}</p>
                 </div>
               ))}
