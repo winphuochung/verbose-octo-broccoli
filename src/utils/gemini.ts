@@ -58,7 +58,7 @@ export async function callGeminiAPI(messages: any[], selectedModel: string) {
 
   for (const model of chain) {
     try {
-      console.log(\`Đang thử gọi API với model: \${model}...\`);
+      console.log(`Đang thử gọi API với model: ${model}...`);
       
       const contents = messages.map(msg => ({
         role: msg.role === "assistant" ? "model" : "user",
@@ -77,7 +77,7 @@ export async function callGeminiAPI(messages: any[], selectedModel: string) {
         }
       };
 
-      const res = await fetch(\`https://generativelanguage.googleapis.com/v1beta/models/\${model}:generateContent?key=\${apiKey}\`, {
+      const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -88,7 +88,7 @@ export async function callGeminiAPI(messages: any[], selectedModel: string) {
       const data = await res.json();
 
       if (!res.ok) {
-        throw new Error(data.error?.message || \`Lỗi HTTP: \${res.status}\`);
+        throw new Error(data.error?.message || `Lỗi HTTP: ${res.status}`);
       }
 
       if (data.candidates && data.candidates.length > 0) {
@@ -97,11 +97,11 @@ export async function callGeminiAPI(messages: any[], selectedModel: string) {
         throw new Error("API trả về phản hồi rỗng.");
       }
     } catch (err: any) {
-      console.warn(\`Model \${model} thất bại: \`, err.message);
+      console.warn(`Model ${model} thất bại: `, err.message);
       lastError = err;
       // Continue to next model in chain
     }
   }
 
-  throw new Error(\`Tất cả các model đều thất bại. Lỗi cuối cùng: \${lastError?.message}\`);
+  throw new Error(`Tất cả các model đều thất bại. Lỗi cuối cùng: ${lastError?.message}`);
 }
