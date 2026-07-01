@@ -1,0 +1,6 @@
+{
+  "name": "Trung tâm Điều hành Giáo dục Google Workspace",
+  "description": "Giải pháp số hóa và tự động hóa hoạt động chuyên môn trường học dựa trên hệ sinh thái Google Workspace.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

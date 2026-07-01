@@ -1,0 +1,24 @@
+{
+  "teachers": [
+    {
+      "id": "GV001",
+      "name": "Nguyễn Văn A",
+      "dob": "1985-05-12",
+      "subject": "Toán học",
+      "degree": "Thạc sĩ",
+      "phone": "0912345678",
+      "email": "nva@school.edu.vn"
+    },
+    {
+      "id": "GV002",
+      "name": "Trần Thị B",
+      "dob": "1990-08-22",
+      "subject": "Ngữ văn",
+      "degree": "Cử nhân",
+      "phone": "0987654321",
+      "email": "ttb@school.edu.vn"
+    }
+  ],
+  "evaluations": [],
+  "files": []
+}
